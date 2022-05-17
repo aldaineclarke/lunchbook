@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel = "stylesheet"  href = "/lginstyle.css"> -->
+    <title>Lunch book</title>
+</head>
+<style>
+    *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    background-color: #fcae5b;
+    
+  }
+  
+.box {
+    max-width: 500px;
+    margin: 30px auto;
+    overflow: auto;
+    min-height: 300px;
+    border: 1px solid #fd6f9f;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #fdcda3;
+}
+
+.box h1{
+    text-align: center;
+    padding: 0 0 25px 0;
+}
+
+form .feilds{
+    position: relative;
+    margin: 30px 0;
+}
+
+.feilds input{
+    width: 100%;
+    padding: 5px 5px;
+    height: 30px;
+    font-size: 16px;
+    border: 1px;
+    background: wheat;
+    outline: none;
+}
+
+input[type="submit"]{
+    background-color:#fcae5b;
+}
+</style>
+<body>
+    <div class="box">
+        <h1>Log In</h1>
+
+        <form action="">
+            <div class="feilds">
+                <label for="user">Username</label>
+                <input type="text" name="user" id="user">
+                <br>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+                <br><br>
+                <input type="submit" value="Login">                
+            </div>
+            
+        </form>
+        
+    </div>
+</body>
+</html>
