@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Orders</title>
+</head>
+<style>
+
+    body {
+        margin-top: 70px;
+        text-align: center;
+        background-image: url(https://st2.depositphotos.com/1013886/10274/i/950/depositphotos_102745280-stock-photo-healthy-eating-background-studio-photo.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        height: auto;
+        width: 100%;
+    }
+    .container {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        background-color: blanchedalmond;
+        opacity: 0.7;
+        width: 34%;
+        margin-left: 585px;
+    }
+    form {
+        width: 600px;
+        padding: 10px;
+    }
+    legend {
+        margin-bottom: 20px;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    label {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    input[type=number], input[type=text] {
+        width: 50%;
+        padding: 4px;
+        text-align: center;
+        font-size: 22px;
+        border: 2px solid green;
+    }
+    input[type=date]  {
+        width: 40%;
+        padding: 4px;
+        text-align: center;
+        font-size: 18px;
+        border: 2px solid green;
+    }
+    select {
+        width: 30%;
+        padding: 7px;
+        text-align: center;
+        font-size: 15px;
+        border: 1px solid yellow;
+    }
+    h2 {
+        font-weight: bold;
+        font-size: 24px;
+    }
+    button {
+        background-color: powderblue;
+        /*color: white;*/
+        padding: 16px 20px;
+        margin: 5px 35%;
+        border: none;
+        cursor: pointer;
+        width: 30%;
+        opacity: 0.9;
+        font-size: 14px;
+        text-align: center;
+    }
+</style>
+<body>
+
+    <div class="container">
+    
+        <form action="/add" method="post">
+            
+                <legend>MAKE YOUR ORDERS HERE!!!</legend>
+
+                <label>First Name:</label><br>
+                <input type="text" id="fnm" name="FName" value=""><br><br>
+
+                <label>Last Name:</label><br>
+                <input type="text" id="fnm" name="LName" value=""><br><br><br>
+
+                <label>Date:</label>
+                <input type="date" id="dt" name="Date" value=""><br><br>
+
+                <h2 style="font-size: 20px;">Select from each category dropdowns the specific meal options.</h2>
+
+                <label>Meat Dish</label><br>
+                <select name="mt_dsh">
+                    <option value="1" >Fry Chicken</option>
+                    <option value="1" >Bake Chicken</option>
+                </select><br><br>
+
+                <label>Starch</label><br>
+                <select name="starch">
+                    <option value="2" >Rice & Peas</option>
+                    <option value="2" >White Rice</option>
+                </select><br><br>
+
+                <label>Side Dish</label><br>
+                <select name="sd_dsh">
+                    <option value="3" >Pasta</option>
+                    <option value="3" >Raw Vegetable</option>
+                </select><br><br>
+
+                <label>Beverage</label><br>
+                <select name="beverage">
+                    <option value="4" >Lemonade</option>
+                    <option value="4" >Orange Juice</option>
+                    <option value="4" >Pepsi</option>
+                </select><br><br>
+
+                <button type="submit">CREATE ORDER</button>
+
+                <div>
+                    <h3 style="font-style: italic;">Thank You! Enjoy the rest of your day.
+                    </h3>
+                </div>    
+            
+        </form>
+
+    </div>
+
+</body>
+</html>
