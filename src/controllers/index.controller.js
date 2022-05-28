@@ -6,7 +6,6 @@ function getLoginPage(req, res, next){
 function authenticateUser(req, res,next){
     let password = req.body.password;
     let email = req.body.email;
-    console.log({password, email})
 
     db.query(`SELECT * FROM administrators WHERE email = '${req.body.email}' `, email, (error, records, fields)=>{
         if(error) throw error;
@@ -32,5 +31,4 @@ module.exports = {
     getLoginPage,
     getHomePage,
     authenticateUser
-
 }
