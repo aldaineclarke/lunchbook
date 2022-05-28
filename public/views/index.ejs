@@ -1,0 +1,58 @@
+<%- include('~header.ejs')%>
+
+    <div class="container">
+        <p>Welcome <%= user.username%></p>
+    
+        <form action="/add" method="post">
+            
+                <legend>MAKE YOUR ORDERS HERE!!!</legend>
+
+                <label>First Name:</label><br>
+                <input type="text" id="fnm" name="FName" value=""><br><br>
+
+                <label>Last Name:</label><br>
+                <input type="text" id="fnm" name="LName" value=""><br><br><br>
+
+                <label>Date:</label>
+                <input type="date" id="dt" name="Date" value=""><br><br>
+
+                <h2 style="font-size: 20px;">Select from each category dropdowns the specific meal options.</h2>
+
+                <label>Meat Dish</label><br>
+                <select name="mt_dsh">
+                    <option value="1" >Fry Chicken</option>
+                    <option value="1" >Bake Chicken</option>
+                </select><br><br>
+
+                <label>Starch</label><br>
+                <select name="starch">
+                    <option value="2" >Rice & Peas</option>
+                    <option value="2" >White Rice</option>
+                </select><br><br>
+
+                <label>Side Dish</label><br>
+                <select name="sd_dsh">
+                    <option value="3" >Pasta</option>
+                    <option value="3" >Raw Vegetable</option>
+                </select><br><br>
+
+                <label>Beverage</label><br>
+                <select name="beverage">
+                    <option value="4" >Lemonade</option>
+                    <option value="4" >Orange Juice</option>
+                    <option value="4" >Pepsi</option>
+                </select><br><br>
+
+                <button type="submit">CREATE ORDER</button>
+
+                <div>
+                    <h3 style="font-style: italic;">Thank You! Enjoy the rest of your day.
+                    </h3>
+                </div>    
+            
+        </form>
+
+    </div>
+
+</body>
+</html>

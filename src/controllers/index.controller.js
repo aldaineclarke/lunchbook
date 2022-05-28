@@ -1,7 +1,7 @@
 const db = require("../config/db.config");
 
 function getLoginPage(req, res, next){
-    res.render("login",{messages:{error: req.flash("error")}})
+    res.render("login",{title:"Login",messages:{error: req.flash("error")}})
 }
 function authenticateUser(req, res,next){
     let password = req.body.password;
@@ -17,13 +17,13 @@ function authenticateUser(req, res,next){
         
         if(user){
             req.session.user = user;
-            res.redirect(200,"/")
+            res.redirect("/")
         }
     })
 }
 
 function getHomePage(req, res, next){
-    res.render("MealOrder",{user: req.session.user})
+    res.render("index",{title:"Home",user: req.session.user})
 }
 
 
