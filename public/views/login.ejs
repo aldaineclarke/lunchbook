@@ -1,76 +1,38 @@
 <%- include("~header.ejs")%>
-<style>
-    *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+<section class="login">
 
-body {
-    background-color: #fcae5b;
+   <% if (messages && messages.error){%>
+    <div class="notification__wrapper active error">
+        <div class="notification__container">
+            <div class="notification__icon">
     
-  }
-  
-.box {
-    max-width: 500px;
-    margin: 30px auto;
-    overflow: auto;
-    min-height: 300px;
-    border: 1px solid #fd6f9f;
-    padding: 30px;
-    border-radius: 15px;
-    background-color: #fdcda3;
-}
-
-.box h1{
-    text-align: center;
-    padding: 0 0 25px 0;
-}
-
-form .feilds{
-    position: relative;
-    margin: 30px 0;
-}
-
-.feilds input{
-    width: 100%;
-    padding: 5px 5px;
-    height: 30px;
-    font-size: 16px;
-    border: 1px;
-    background: wheat;
-    outline: none;
-}
-
-input[type="submit"]{
-    background-color:#fcae5b;
-}
-.error{
-    color: red;
-}
-</style>
-<body>
-   <% if (messages){%>
-    <div class="notif">
-        <p class="<%= (messages.error) ? 'error': 'success' %>" </p><%= messages.error %></p>
+            </div>
+            <div >
+                <p class="notification__message"><%= messages.error[0]%></p>
+            </div>
+    
+        </div>
+    
     </div>
    <%} %>
-    <div class="box">
-        <h1>Log In</h1>
+   <div class="header-area">
+       <h1>Admin Login</h1>
+   </div>
 
-        <form action="/authenticate" method="POST">
-            <div class="fields">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email">
-                <br>
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" required>
-                <br><br>
-                <input type="submit" value="Login">                
-            </div>
-            
-        </form>
+    <form action="/authenticate" method="POST" class="loginForm">
+        <legend>Login</legend>
+        <div class="fields">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            <br>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+            <br><br>
+            <input type="submit" value="Login">                
+        </div>
+        
+    </form>
         
     </div>
-</body>
+</section>
 </html>

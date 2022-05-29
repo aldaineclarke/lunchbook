@@ -1,13 +1,6 @@
-body {
-    margin-top: 70px;
-    text-align: center;
-    background-image: url(https://st2.depositphotos.com/1013886/10274/i/950/depositphotos_102745280-stock-photo-healthy-eating-background-studio-photo.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    height: auto;
-    width: 100%;
+body{
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .container {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -65,4 +58,140 @@ button {
     opacity: 0.9;
     font-size: 14px;
     text-align: center;
+}
+
+.login{
+    background-color: white;
+}
+.header-area{
+    padding: 10px;
+    text-align: center;
+    height: 40vh;
+    background-color:  #fcae5b;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+
+}
+.header-area h1{
+font-weight: bold;
+flex-grow: 1;
+font-size: 3rem;
+color: #794712
+
+}
+.loginForm{
+    margin: auto;
+    width: 40vw;
+    min-width: 450px;
+    border: 1px solid lightgrey;
+    margin-top: 3rem;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.04)
+}  
+
+.loginForm label{
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+
+.loginForm .fields{
+    position: relative;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    color: #794712;
+}
+
+.fields input{
+    flex-grow: 1;
+    padding: 5px 5px;
+    height: 30px;
+    font-size: 16px;
+    border: 1px;
+    /* background: wheat; */
+    outline-color: #fcae5b;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+
+}
+
+
+.loginForm input[type="submit"]{
+    background-color:#fcae5b;
+    color: #794712;
+    flex-grow: 1;
+    display: inline-block;
+    padding: 10px;
+    height: auto;
+    font-weight: bold;
+    font-size: 1.3rem;
+    transition: background-color 300ms linear;
+}
+
+.loginForm input[type="submit"]:hover{
+    background-color: #794712;
+    color: #fcae5b;
+}
+.error{
+    border-color: red;
+    color: red;
+}
+
+
+/* NOTIFICATION COMPONENT */
+.notification__wrapper{
+    position:absolute;
+    margin-top: 5px;
+    right: 2px;
+    top: 0;
+    transform: scale(0);
+    height:50px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 255, 0.209);
+    background-color: white;
+    color: red;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.09);
+}
+
+
+.notification__wrapper.active{
+
+    animation-duration: 5000ms;
+    animation-timing-function: ease-in;
+    animation-name: slideDown;
+    animation-fill-mode: forwards; 
+}
+.notification__message{
+    margin:0;
+    padding: 10px;
+}
+.notification__container{
+    width: max-content;
+    height: 100%;
+    display:flex;
+    align-items: center;
+}
+@keyframes slideDown {
+    0%{transform:translateY(-20px); width: 5px; height: 5px;}
+    5%{transform: translateY(5px); }
+    /* 7%{transform: scaleY(0.5); transform-origin: bottom;} */
+
+    10%{transform:translateY(5px);width: 5px; height: 50px;}
+    20%{transform:translateY(5px);width: 80%; height: 50px;}
+
+    /* 20%{transform:translateY(5px) scale(1);} */
+    30%{transform:translateY(5px); width: 80%; height:50px}
+    70%{transform:translateY(5px); width: 80%; height:50px}
+
+    80%{transform:translateY(5px); width: 80%; height:50px}
+    90%{transform:translateY(5px); width: 5px ; height:50px}
+
+    95%{transform:translateY(5px)}
+    100%{transform:translateY(-20px); height: 5px; width: 5px}
+    
 }
