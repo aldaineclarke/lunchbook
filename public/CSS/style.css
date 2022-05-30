@@ -140,6 +140,10 @@ color: #794712
     color: red;
 }
 
+legend{
+    color: #794712;
+}
+
 
 /* NOTIFICATION COMPONENT */
 .notification__wrapper{
