@@ -1,13 +1,8 @@
 const db = require("../config/db.config");
 
 function getLoginPage(req, res, next){
-    // let messages = {}; 
-    // if(req.flash("error").length > 0){
-    //     messages.error = req.flash("error")
-    // }else messages.error = null
-
-    console.log(req.flash("error"))
-    res.render("login",{title:"Login",messages:{error: req.flash("error")}})
+    res.locals.error_msg = req.flash("error");
+    res.render("login",{title:"Login", messages:{error: res.locals.error_msg}})
 }
 function authenticateUser(req, res,next){
     let password = req.body.password;
@@ -17,7 +12,6 @@ function authenticateUser(req, res,next){
         if(error) throw error;
         if(records.length < 1){
             req.flash("error", "The credentials were incorrect.");
-            console.log(req.flash('error'))
             return res.redirect("/login")
         }
         let user = (records[0].password == password) ? records[0] : null;
