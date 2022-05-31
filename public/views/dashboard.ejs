@@ -1,4 +1,4 @@
-<%- include('header.ejs')%>
+<%- include('~header.ejs')%>
    <% if (messages.success.length > 0) {%>
     <div class="notification__wrapper active error">
         <div class="notification__container">
@@ -14,19 +14,33 @@
     </div>
    <%} %>
 
-<div class="header-area">
+<div class="header-area inverse">
     <h1>LunchBook Archive</h1>
 </div>
 <div class="dashboard-area">
-    <table>
+    <form action="" class="dateSearchForm">
+        <label>
+            <span>Search date:</span>
+            <input type="date" value= "<%= parseDateToInputField(Date.now()) %>"name="order_date">
+        </label>
+    </form>
+    <table class="lunchTable">
         <thead>
-            <th>ID</th>
+            <th>Student ID</th>
             <th>Student Name</th>
-            <th></th>
-            <th>Meal Choics</th>
+            <!-- <th></th> -->
+            <th>Meal Choice</th>
             <th>Date Signed</th>
         </thead>
         <tbody>
+            <% orders.forEach((order)=>{ %>
+                <tr>
+                    <td><%= order.id %></td>
+                    <td><%= order.studentName%></td>
+                    <td><%= order.mealOptions%></td>
+                    <td><%= parseDateToInputField(order.date) %></td>
+                </tr>
+            <%})%>
 
         </tbody>
     </table>

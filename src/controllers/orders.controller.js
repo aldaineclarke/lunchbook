@@ -1,8 +1,9 @@
 const orders = require('../services/orders.service')
-
+const {parseDateToInputField} = require("../utilities/helper.utils")
 async function getAll(req, res, next) {
 	try {
-		res.json(await orders.getOrders())
+		let allOrders = await orders.getOrders()
+		res.render("dashboard",{orders:allOrders,title:"Dashboard" ,messages: {success:[]}, parseDateToInputField})
 	} catch (err) {
 		console.error(`Error while getting lunch orders`, err.message)
 		next(err)
