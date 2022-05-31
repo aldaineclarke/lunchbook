@@ -1,0 +1,33 @@
+<%- include('header.ejs')%>
+   <% if (messages.success.length > 0) {%>
+    <div class="notification__wrapper active error">
+        <div class="notification__container">
+            <div class="notification__icon">
+    
+            </div>
+            <div >
+                <p class="notification__message"><%= messages.success %></p>
+            </div>
+    
+        </div>
+    
+    </div>
+   <%} %>
+
+<div class="header-area">
+    <h1>LunchBook Archive</h1>
+</div>
+<div class="dashboard-area">
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Student Name</th>
+            <th></th>
+            <th>Meal Choics</th>
+            <th>Date Signed</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
