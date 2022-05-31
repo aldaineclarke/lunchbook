@@ -26,10 +26,14 @@ function authenticateUser(req, res,next){
 function getHomePage(req, res, next){
     res.render("index",{title:"Home",user: req.session.user})
 }
+function getDashboardPage(){
+
+}
 
 
 module.exports = {
     getLoginPage,
     getHomePage,
-    authenticateUser
+    authenticateUser,
+    getDashboardPage
 }

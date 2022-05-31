@@ -139,6 +139,10 @@ color: #794712
     border-color: red;
     color: red;
 }
+.success{
+    border-color: green;
+    color: green;
+}
 
 legend{
     color: #794712;
