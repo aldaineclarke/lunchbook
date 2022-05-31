@@ -4,14 +4,11 @@ async function getOrders() {
 	const data = await new Promise((resolve, reject) => {
 		db.query(
 			`
-				SELECT DISTINCT
-					tn.fname,
-					tn.lname,
-					lt.date
-				FROM
-					lunchbook.trainees tn
-				JOIN lunchbook.lunch_table lt ON tn.id = lt.trainee_id
-				JOIN lunchbook.meal_options mo ON lt.meal_option_id = mo.id;`.replaceAll('\n', ''),
+			SELECT tn.id, concat(tn.fname," ",tn.lname) as studentName ,lt.date, group_concat(mo.option_name) as mealOptions
+			FROM trainees tn
+			INNER JOIN lunch_table lt ON tn.id = lt.trainee_id
+			INNER JOIN meal_options mo ON lt.meal_option_id = mo.id
+			group by tn.fname, lt.date order by date;`.replaceAll('\n', ''),
 			(err, rows) => {
 				if (err) {
 					reject(err)
@@ -22,9 +19,7 @@ async function getOrders() {
 		)
 	})
 
-	return {
-		data,
-	}
+	return data;
 }
 async function getOrderItems(id, date) {
 	const data = await new Promise((resolve, reject) => {

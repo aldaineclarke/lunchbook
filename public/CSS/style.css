@@ -29,13 +29,13 @@ input[type=number], input[type=text] {
     font-size: 22px;
     border: 2px solid green;
 }
-input[type=date]  {
+/* input[type=date]  {
     width: 40%;
     padding: 4px;
     text-align: center;
     font-size: 18px;
     border: 2px solid green;
-}
+} */
 select {
     width: 30%;
     padding: 7px;
@@ -71,14 +71,17 @@ button {
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
+    color: #794712
 
 }
 .header-area h1{
 font-weight: bold;
 flex-grow: 1;
 font-size: 3rem;
-color: #794712
-
+}
+.inverse{
+    background-color: #794712;
+    color: #fcae5b;
 }
 .loginForm{
     margin: auto;
@@ -90,6 +93,25 @@ color: #794712
     padding: 1rem;
     box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.04)
 }  
+.dashboard-area{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-left: 1rem;
+}
+.dateSearchForm{
+    display: flex;
+
+}
+.dateSearchForm input[type="date"]{
+    padding: 5px;
+    border: 2px solid #794712;
+    border-radius: 5px;
+}
+.dateSearchForm input[type="date"]:focus{
+    outline-color: #fcae5b;
+}
 
 .loginForm label{
     font-size: 1.1rem;
@@ -146,6 +168,19 @@ color: #794712
 
 legend{
     color: #794712;
+}
+
+.lunchTable{
+    min-width: 500px;
+    width: 60vw;
+    text-align: center;
+    margin-left: 3rem;
+}
+
+.lunchTable td{
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
 }
 
 
